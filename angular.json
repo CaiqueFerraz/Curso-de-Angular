@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "data-binding-app"
+  "defaultProject": "data-binding-app",
+  "cli": {
+    "analytics": "dd8ec25a-378d-4912-a867-41ee1cc1405e"
+  }
 }
