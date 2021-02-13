@@ -9,8 +9,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { PropertyBindingComponent } from './property-binding/property-binding.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
+import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
+import{FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
     StringInterpolationComponent,
     PropertyBindingComponent,
     EventBindingComponent,
+    TwoWayDataBindingComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,10 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
     MatButtonModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule,
+    MatDividerModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,9 @@ export class EventBindingComponent implements OnInit {
 
   spinnerMode : ProgressSpinnerMode = 'determinate';
   btnEnable = true;
+  selectDisable = false;
+  selectedOption = 1
+  inputName = "Name"
 
   ngOnInit(): void {
   }
@@ -35,7 +38,15 @@ export class EventBindingComponent implements OnInit {
       },300
     )
   }
-  cbChange(){
-    
+  cbChange(event : any){ 
+    this.selectDisable = event.checked;
+  }
+  selectionChange(event : any){
+    console.log(event)
+    this.selectedOption = event.value;
+  }
+  inputEvent(event){
+    console.log(event.target.value) 
+    this.inputName = event.target.value
   }
 }

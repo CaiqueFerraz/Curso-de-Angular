@@ -7,18 +7,46 @@
 
 <section>
     <button mat-button color='pimary' [disabled]="!btnEnable">My button</button>
-    <button mat-button color='warn'  [disabled]="!btnEnable">My button 2</button>
-    <button mat-button color='warn' [disabled]="!btnEnable" (click)="disable()">Disable</button>   
-    <mat-progress-spinner
-    color="primary"
-    [mode]="spinnerMode"
-    [value]="i">
-</mat-progress-spinner>
+    <button mat-button color='warn' [disabled]="!btnEnable">My button 2</button>
+    <button mat-button color='warn' [disabled]="!btnEnable" (click)="disable()">Disable</button>
+    <mat-progress-spinner color="primary" [mode]="spinnerMode" [value]="i">
+    </mat-progress-spinner>
 </section>
 <section>
     <section class="example-section">
-        <p> <mat-checkbox class="example-margin" (change)="cbChange">Disabe/Enable</mat-checkbox></p>
-        <!-- <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox> -->
-      </section>
+        <p>
+            <mat-checkbox class="example-margin" (change)="cbChange($event)">Disabe/Enable</mat-checkbox>
+        </p>
+        <mat-card>
+            <mat-card-content>
+                <mat-form-field appearance="fill">
+                    <mat-label>Cars</mat-label>
+                    <mat-select [disabled]="selectDisable" (selectionChange)=(selectionChange($event))>
+                        <mat-option value="1">Volvo</mat-option>
+                        <mat-option value="2">Saab</mat-option>
+                        <mat-option value="3">Mercedes</mat-option>
+                        <mat-option value="4">Audi</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <p>
+                    SELECTED OPTION {{selectedOption}}
+                </p>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+        <mat-card>
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput placeholder="My Fisrt Name" (input)="inputEvent($event)" [value]="inputName">
+                </mat-form-field>
+            </mat-card-content>
+            Name: {{inputName}}
+            <mat-card-actions>
+            </mat-card-actions>
+        </mat-card>
+    </section>
 </section>
-
